@@ -25,11 +25,9 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   background: var(--space);
   color: var(--white);
-  font-family: 'Syne', sans-serif;
+  font-family: 'Exo 2', sans-serif;
   overflow-x: hidden;
-  cursor: none; /* replaced by custom cursor on desktop */
 }
-@media (max-width: 768px) { body { cursor: auto; } }
 
 /* ── SCROLL PROGRESS ── */
 #scroll-progress {
@@ -39,32 +37,7 @@ body {
   box-shadow: 0 0 8px rgba(0,255,136,.4);
 }
 
-/* ── CUSTOM CURSOR ── */
-#cursor-dot, #cursor-ring {
-  position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 9998;
-  transform: translate(-50%, -50%);
-  will-change: transform;
-}
-#cursor-dot {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 8px var(--green);
-}
-#cursor-ring {
-  width: 32px; height: 32px; border-radius: 50%;
-  border: 1px solid rgba(0,255,136,.5);
-  transition: width .2s var(--ease-out), height .2s var(--ease-out), border-color .2s;
-  transform: translate(-50%, -50%);
-}
-#cursor-ring.hovered {
-  width: 50px; height: 50px;
-  border-color: var(--gold);
-  background: rgba(201,168,76,.06);
-}
-@media (max-width: 768px) {
-  #cursor-dot, #cursor-ring { display: none; }
-}
+
 
 /* ── STARS CANVAS ── */
 #stars-canvas {
@@ -88,7 +61,7 @@ body {
   background: #25D366; color: #fff;
   padding: .75rem 1.2rem .75rem .9rem;
   border-radius: 100px; text-decoration: none;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Exo 2', sans-serif;
   font-weight: 700; font-size: .8rem;
   box-shadow: 0 4px 20px rgba(37,211,102,.4);
   transition: transform .25s var(--ease-spring), box-shadow .25s;

@@ -118,31 +118,6 @@ window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.cli
 window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
 requestAnimationFrame(drawStars);
 
-
-// ── CUSTOM CURSOR (desktop only) ──
-if (!isMobile) {
-  const dot  = document.getElementById('cursor-dot');
-  const ring = document.getElementById('cursor-ring');
-  let rx = 0, ry = 0, cx = 0, cy = 0;
-
-  window.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; });
-
-  function animCursor() {
-    rx += (cx - rx) * 0.12;
-    ry += (cy - ry) * 0.12;
-    dot.style.transform  = `translate(${cx}px,${cy}px)`;
-    ring.style.transform = `translate(${rx}px,${ry}px)`;
-    requestAnimationFrame(animCursor);
-  }
-  animCursor();
-
-  document.querySelectorAll('a, button, .sol-card, .tab-btn, .pq-item').forEach(el => {
-    el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
-    el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
-  });
-}
-
-
 // ── NAVBAR SCROLL ──
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
